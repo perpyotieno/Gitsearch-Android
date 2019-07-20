@@ -12,9 +12,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class FrequentlySearchedActivity extends AppCompatActivity {
+//    private  TextView mTextView;
     private ListView mListView;
     private String[] fsearches = new String[]{
-            "perpyotieno","ArnoldOduma","EdithKhalivinzwa","AliceMawia", "NellyWanjiru","ShiroLeah","JoyWambui"
+            "perpyotieno","ArnoldOduma","EdithKhalivinzwa","AliceMawia", "NellyWanjiru","ShiroLeah","JoyWambui"};
+    private String[] fnumberOfRepositories = new String[]{
+            "Number of Repositories: 10","Number of Repositories: 30","Number of Repositories: 1","Number of Repositories: 34", "Number of Repositories: 70","Number of Repositories: 5","Number of Repositories: 1"
     };
 
     @Override
@@ -23,7 +26,7 @@ public class FrequentlySearchedActivity extends AppCompatActivity {
         setContentView(R.layout.activity_frequently_searched);
 
         mListView = (ListView) findViewById(R.id.listView);
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, fsearches);
+        MyFrequentlySearchedArrayAdapter adapter = new MyFrequentlySearchedArrayAdapter(this, android.R.layout.simple_list_item_1, fsearches, fnumberOfRepositories);
         mListView.setAdapter(adapter);
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

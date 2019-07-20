@@ -7,15 +7,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class AboutActivity extends AppCompatActivity {
-    private Button mFrequentlySearchedButton;
+    @BindView(R.id.frequently_searched) Button mFrequentlySearchedButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
-        mFrequentlySearchedButton =(Button) findViewById(R.id.frequently_searched);
+        ButterKnife.bind(this);
 
         mFrequentlySearchedButton.setOnClickListener(new View.OnClickListener() {
             @Override
