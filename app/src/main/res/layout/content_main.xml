@@ -24,4 +24,13 @@
 
     </FrameLayout>
 
+    <!--<FrameLayout-->
+        <!--android:id="@+id/frag_container"-->
+        <!--android:background="@color/colorAccent"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_marginBottom="60dp"-->
+        <!--tools:layout_editor_absoluteX="8dp"-->
+        <!--tools:layout_editor_absoluteY="8dp"/>-->
+
 </RelativeLayout>

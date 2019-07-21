@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         if(savedInstanceState == null);
 
+        getSupportFragmentManager().beginTransaction().replace(R.id.screen_area,new HomeFragment()).commit();
+
 
 
 
