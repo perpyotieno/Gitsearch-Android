@@ -17,7 +17,7 @@ public class FrequentlySearchedActivity extends AppCompatActivity {
     private String[] fsearches = new String[]{
             "perpyotieno","ArnoldOduma","EdithKhalivinzwa","AliceMawia", "NellyWanjiru","ShiroLeah","JoyWambui"};
     private String[] fnumberOfRepositories = new String[]{
-            "Number of Repositories: 10","Number of Repositories: 30","Number of Repositories: 1","Number of Repositories: 34", "Number of Repositories: 70","Number of Repositories: 5","Number of Repositories: 1"
+            " 10"," 30"," 1"," 34", " 70"," 5"," 1"
     };
 
     @Override

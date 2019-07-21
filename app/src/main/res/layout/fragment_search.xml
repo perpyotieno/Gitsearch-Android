@@ -2,13 +2,30 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_purple">
+    android:background="@drawable/gitsearch"
+    android:padding="16dp">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Search Fragment"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
+        android:hint="Username"
+        android:id="@+id/edit_username"
+        android:layout_marginTop="100dp"/>
+
+    <EditText
+        android:id="@+id/edit_keyword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="keyword"
+        android:layout_below="@+id/edit_username"
+
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:id="@+id/search_repos"
+        android:layout_below="@+id/edit_keyword"/>
 
 </RelativeLayout>
