@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FrequentlySearchedActivity">
+    tools:context=".FrequentlySearchedActivity"
+    android:background="@drawable/gradient">
+
+
+
     <TextView
         android:id="@+id/textview1"
         android:layout_width="match_parent"
@@ -19,5 +23,12 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="5dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You also searched: "
+        android:id="@+id/searchedTextView"
+        android:layout_below="@+id/listView"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

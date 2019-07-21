@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,11 +21,21 @@ public class FrequentlySearchedActivity extends AppCompatActivity {
     private String[] fnumberOfRepositories = new String[]{
             " 10"," 30"," 1"," 34", " 70"," 5"," 1"
     };
+    private Button mSearchReposButton;
+    private EditText mUsernameEditText;
+    private TextView mSearchedTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_frequently_searched);
+
+        mSearchedTextView =(TextView) findViewById(R.id.searchedTextView);
+
+        Intent intent = getIntent();
+        String searched = intent.getStringExtra("searched");
+
+        mSearchedTextView.setText("Here is what you have searched: " + searched);
 
         mListView = (ListView) findViewById(R.id.listView);
         MyFrequentlySearchedArrayAdapter adapter = new MyFrequentlySearchedArrayAdapter(this, android.R.layout.simple_list_item_1, fsearches, fnumberOfRepositories);
