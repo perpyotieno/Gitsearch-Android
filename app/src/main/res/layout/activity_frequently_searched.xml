@@ -8,25 +8,36 @@
     android:background="@drawable/gradient">
 
 
-
     <TextView
         android:id="@+id/textview1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="25dp"
         android:text="These are the most searched Github Repositories:"
-        android:layout_margin="25dp"/>
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
     <ListView
+        android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/listView"
         android:layout_below="@+id/textview1"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="5dp"/>
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="-10dp"
+        android:layout_marginRight="-10dp" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="You also searched: "
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:id="@+id/searchedTextView"
         android:layout_below="@+id/listView"
         android:layout_centerHorizontal="true"/>
