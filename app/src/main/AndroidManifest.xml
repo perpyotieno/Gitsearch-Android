@@ -9,8 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FrequentlySearchedActivity"></activity>
-        <activity android:name=".AboutActivity" />
+        <activity android:name=".FrequentlySearchedActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.mygitsearchdrawer.AboutActivity">
+            </meta-data>
+
+        </activity>
+        <activity android:name=".AboutActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.mygitsearchdrawer.MainActivity">
+            </meta-data>
+
+        </activity>
+
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

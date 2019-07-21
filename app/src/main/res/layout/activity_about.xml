@@ -43,26 +43,9 @@
         app:layout_constraintVertical_bias="0.15" />
 
     <Button
-        android:id="@+id/search_repos"
-        android:layout_width="110dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="25dp"
-        android:text="search github repos"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.221"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
         android:id="@+id/frequently_searched"
-        android:layout_width="110dp"
+        android:layout_below="@+id/editText3"
+        android:layout_width="match_parent"
         android:layout_height="71dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
