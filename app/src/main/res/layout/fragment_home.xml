@@ -44,7 +44,7 @@
         android:layout_marginLeft="150dp"
         android:layout_marginTop="350dp"
         android:background="@color/colorTextIcons"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorPrimaryDark"
         android:text="About us"
         />
 

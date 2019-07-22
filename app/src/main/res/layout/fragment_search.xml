@@ -27,7 +27,7 @@
         android:text="Search"
 
         android:background="@color/colorTextIcons"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorPrimaryDark"
         android:id="@+id/search_repos"
         android:layout_below="@+id/edit_keyword"/>
 

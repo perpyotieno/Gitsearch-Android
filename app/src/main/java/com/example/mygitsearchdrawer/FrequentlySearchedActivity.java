@@ -29,6 +29,7 @@ public class FrequentlySearchedActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_frequently_searched);
+        setTitle("Frequently Searched");
 
         mSearchedTextView =(TextView) findViewById(R.id.searchedTextView);
 
