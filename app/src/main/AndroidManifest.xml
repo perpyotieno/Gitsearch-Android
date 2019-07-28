@@ -9,16 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GithubRepositories"></activity>
+        <activity android:name=".RepositoriesDetail"></activity>
+        <activity android:name=".GithubRepositories" />
         <activity android:name=".FrequentlySearchedActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.mygitsearchdrawer.AboutActivity"></meta-data>
+                android:value="com.example.mygitsearchdrawer.AboutActivity" />
         </activity>
         <activity android:name=".AboutActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.mygitsearchdrawer.MainActivity"></meta-data>
+                android:value="com.example.mygitsearchdrawer.MainActivity" />
         </activity>
         <activity
             android:name=".MainActivity"
