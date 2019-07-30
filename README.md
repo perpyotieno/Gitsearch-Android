@@ -6,16 +6,26 @@ Perpetua Mary
 ## General Information
 This is a simple android application to search for any GitHub repository. Some useful filters are also added along with search option. This application accesses GitHub API via Http Request.
 
+## Requirements
+ * Software Development Kit (SDK)
+ * Java Development Kit (JDK)
+ * Android Studio
+ * Gradle
+
 ## Project setup instructions
-* Make sure you have all the Requirements of running Java Android apps installed such as JUnit, android Studio, JDK.
-
 * Clone the project into your machine from https://github.com/perpyotieno/github_searcher_android
+* Clone this repo ``git clone https://github.com/lendilai/Musica.git``
+* Install java. Follow instructions [on this site](https://thishosting.rocks/install-java-ubuntu/)
+* Install gradle by running the command: ``sdk install gradle``
+* Download and install [Android Studio](https://developer.android.com/studio)
+* After installations, open the project in Android Studio and wait for gradle to complete building the project
+* Run the app on the inbuilt emulator or on an android phone running Android 4.0.3 and above(Ensure your phone is set to enable USB debugging)
 
+## Technologies used
+- [JAVA](https://www.java.com/) : This is used to implement some of the app functionality.
+- [Android](https://developer.android.com/) : This is used to create the user interface and achieve the user interactions
+- [XML](https://www.w3schools.com/xml/xml_whatis.asp) : This is used to position the widgets on the screen
 
-## Technologies
-* Junit
-* Android
-* Java
 
 ## Support and contact details
 For any inquiries, please reach out to perpetuamary6630@gmail.com

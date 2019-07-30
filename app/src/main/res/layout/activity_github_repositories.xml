@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id= "@+id/swipeContainer"
-    tools:context=".GithubRepositories">
+    tools:context=".controller.GithubRepositoriesActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -13,7 +13,7 @@
         android:layout_height= "match_parent"
         tools:showIn="@layout/activity_github_repositories"
         android:backgroundTint="#f2f2f2"
-        tools:context=".controller.GithubRepositories"/>
+        tools:context=".controller.GithubRepositoriesActivity"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

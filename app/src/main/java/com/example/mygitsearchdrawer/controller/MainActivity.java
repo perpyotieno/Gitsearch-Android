@@ -1,7 +1,8 @@
-package com.example.mygitsearchdrawer;
+package com.example.mygitsearchdrawer.controller;
 
 import android.os.Bundle;
 
+import com.example.mygitsearchdrawer.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 

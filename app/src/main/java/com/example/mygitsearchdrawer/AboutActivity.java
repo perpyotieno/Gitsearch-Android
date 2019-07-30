@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.mygitsearchdrawer.controller.GithubRepositoriesActivity;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -24,7 +26,7 @@ public class AboutActivity extends AppCompatActivity {
         mFrequentlySearchedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AboutActivity.this, FrequentlySearchedActivity.class);
+                Intent intent = new Intent(AboutActivity.this, GithubRepositoriesActivity.class);
                 startActivity(intent);
             }
         });

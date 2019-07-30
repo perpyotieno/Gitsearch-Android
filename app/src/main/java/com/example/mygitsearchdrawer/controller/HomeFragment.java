@@ -1,4 +1,4 @@
-package com.example.mygitsearchdrawer;
+package com.example.mygitsearchdrawer.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.mygitsearchdrawer.AboutActivity;
+import com.example.mygitsearchdrawer.R;
 
 public class HomeFragment extends Fragment {
     private Button mAboutUsButton;
@@ -29,7 +32,7 @@ public class HomeFragment extends Fragment {
         view.findViewById(R.id.about_us).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),AboutActivity.class);
+                Intent intent = new Intent(getActivity(), AboutActivity.class);
                 startActivity(intent);
             }
         });

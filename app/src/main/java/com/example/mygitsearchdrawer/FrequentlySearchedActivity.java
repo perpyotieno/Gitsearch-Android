@@ -29,14 +29,14 @@ public class FrequentlySearchedActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_frequently_searched);
-        setTitle("Frequently Searched");
+        setTitle("Searched User");
 
         mSearchedTextView =(TextView) findViewById(R.id.searchedTextView);
 
         Intent intent = getIntent();
         String searched = intent.getStringExtra("searched");
 
-        mSearchedTextView.setText("Here is what you have searched: " + searched);
+        mSearchedTextView.setText("Here is what you have searched:\n " + searched);
 
         mListView = (ListView) findViewById(R.id.listView);
         MyFrequentlySearchedArrayAdapter adapter = new MyFrequentlySearchedArrayAdapter(this, android.R.layout.simple_list_item_1, fsearches, fnumberOfRepositories);
