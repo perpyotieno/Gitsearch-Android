@@ -78,11 +78,13 @@ public class GithubRepositoriesActivity extends AppCompatActivity {
                     recyclerView.setAdapter(new ItemAdapter(getApplicationContext(), items));
                     recyclerView.smoothScrollToPosition(0);
                     swipeContainer.setRefreshing(false);
-//                    for(Item watchman: items){
-//                        Log.d("username-----------", watchman.getLogin());
-//                        Log.d("image--------------", watchman.getAvatarUrl());
-//                        Log.d("url----------------", watchman.getHtmlUrl());
-//                    }
+                    for(Item watchman: items){
+                        Log.d("username-----------", watchman.getLogin());
+                        Log.d("image--------------", watchman.getAvatarUrl());
+                        Log.d("url----------------", watchman.getHtmlUrl());
+                        Integer fol = watchman.getFollowers();
+                        Log.e("Followers-------",fol.toString());
+                    }
                 }
 
                 @Override

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id= "@+id/swipeContainer"
-    tools:context=".controller.GithubRepositoriesActivity">
+    tools:context=".controller.GithubRepositoriesActivity"
+    android:background="@color/yellow">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

@@ -1,5 +1,7 @@
 package com.example.mygitsearchdrawer.controller;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.example.mygitsearchdrawer.R;
@@ -118,10 +120,19 @@ public class MainActivity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_share) {
-            Toast.makeText(this,"Share",Toast.LENGTH_SHORT).show();
+
+           String packageName= getPackageName();
+           String shareUrl = "https://play.google.com/store/apps/details?id=" + packageName;
+           Intent txtIntent= new Intent(Intent.ACTION_SEND);
+           txtIntent.setType("text/plain");
+           txtIntent.putExtra(Intent.EXTRA_TEXT, shareUrl);
+           startActivity(Intent.createChooser(txtIntent, "Github Search"));
+
+           // Toast.makeText(this,"Share",Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.nav_send) {
-            Toast.makeText(this,"Send",Toast.LENGTH_SHORT).show();
+
+            //Toast.makeText(this,"Send",Toast.LENGTH_SHORT).show();
 
         }
         if(fragment !=null){

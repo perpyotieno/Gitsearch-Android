@@ -1,6 +1,8 @@
 package com.example.mygitsearchdrawer.controller;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -27,9 +29,6 @@ public class UserDetailsFragment extends Fragment {
     @BindView(R.id.user_image_header) ImageView mImageLabel;
     @BindView(R.id.username) TextView mNameLabel;
     @BindView(R.id.link) TextView mGithubLink;
-//    @BindView(R.id.followers) TextView mFollowers;
-//    @BindView(R.id.following) TextView mFollowing;
-//    @BindView(R.id.repositories) TextView mRepositories;
 
     private Item items;
 
@@ -53,16 +52,14 @@ public class UserDetailsFragment extends Fragment {
         ButterKnife.bind(this, view);
         Picasso.get().load(items.getAvatarUrl()).into(mImageLabel);
 
+
         mNameLabel.setText(items.getLogin());
         mGithubLink.setText(items.getHtmlUrl());
-//        mFollowers.setText(Integer.toString(items.getFollowers()));
-//        mFollowing.setText(Integer.toString(items.getFollowing()));
-//        mRepositories.setText(Integer.toString(items.getRepositories()));
+
+
 
         return view;
     }
-
-
 
 
 }
