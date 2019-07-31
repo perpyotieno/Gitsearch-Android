@@ -2,17 +2,15 @@ package com.example.mygitsearchdrawer;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mygitsearchdrawer.controller.RepositoriesDetail;
+import com.example.mygitsearchdrawer.controller.RepositoriesDetailActivity;
 import com.example.mygitsearchdrawer.model.Item;
 import com.squareup.picasso.Picasso;
 
@@ -74,7 +72,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
                 @Override
                 public void onClick(View v) {
                     int i = getAdapterPosition();
-                    Intent intent = new Intent(context, RepositoriesDetail.class);
+                    Intent intent = new Intent(context, RepositoriesDetailActivity.class);
                     intent.putExtra("i", i);
                     intent.putExtra("mItems", Parcels.wrap(items));
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -82,7 +80,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
 //                    if (pos != RecyclerView.NO_POSITION) {
 //                        Item clickedDataItem = items.get(pos);
-//                        Intent intent = new Intent(context, RepositoriesDetail.class);
+//                        Intent intent = new Intent(context, RepositoriesDetailActivity.class);
 //                        intent.putExtra("login", items.get(pos).getLogin());
 //                        intent.putExtra("html_url", items.get(pos).getHtmlUrl());
 //                        intent.putExtra("avatar_url", items.get(pos).getAvatarUrl());

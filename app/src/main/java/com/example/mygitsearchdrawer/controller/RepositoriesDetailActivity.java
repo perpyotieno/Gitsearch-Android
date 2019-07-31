@@ -20,7 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class RepositoriesDetail extends AppCompatActivity{
+public class RepositoriesDetailActivity extends AppCompatActivity{
     @BindView(R.id.viewPager) ViewPager mViewPager;
     private GithubPagerAdapter adapterViewPager;
     ArrayList<Item> items = new ArrayList<>();

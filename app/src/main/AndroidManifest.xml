@@ -14,7 +14,7 @@
             android:name="com.google.android.actions"
             android:value=".controller.GithubRepositories"/>
 
-        <activity android:name=".controller.RepositoriesDetail" />
+        <activity android:name=".controller.RepositoriesDetailActivity" />
         <activity android:name=".controller.GithubRepositoriesActivity" />
         <activity android:name=".FrequentlySearchedActivity">
             <meta-data
