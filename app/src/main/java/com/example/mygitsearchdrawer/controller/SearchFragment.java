@@ -19,6 +19,8 @@ public class SearchFragment extends Fragment {
     private Button mSearchReposButton;
     private EditText mUsernameEditText;
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         getActivity().setTitle("Search");

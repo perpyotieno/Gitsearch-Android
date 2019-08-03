@@ -12,14 +12,6 @@
         android:id="@+id/edit_username"
         android:layout_marginTop="100dp"/>
 
-    <EditText
-        android:id="@+id/edit_keyword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="keyword"
-        android:layout_below="@+id/edit_username"
-
-        />
 
     <Button
         android:layout_width="match_parent"
@@ -29,6 +21,6 @@
         android:background="@color/colorTextIcons"
         android:textColor="@color/colorPrimaryDark"
         android:id="@+id/search_repos"
-        android:layout_below="@+id/edit_keyword"/>
+        android:layout_below="@+id/edit_username"/>
 
 </RelativeLayout>
