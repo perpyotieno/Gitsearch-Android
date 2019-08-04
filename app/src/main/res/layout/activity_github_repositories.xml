@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/disconnected"
-        android:text="No internet connection. Please make sure you device is connected to the internet"
+        android:text="@string/no_internet_connection_please_make_sure_you_device_is_connected_to_the_internet"
         android:textStyle="bold"
         android:textSize="30sp"
         />

@@ -20,14 +20,14 @@
 
         android:layout_marginLeft="60dp"
         android:layout_centerHorizontal="true"
-        android:text="Github Searcher"
+        android:text="@string/github_searcher"
         android:textColor="@color/colorAccent"
         android:textSize="40sp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/github_searcher"
-        android:text="Search through github"
+        android:text="@string/search_through_github"
         android:textColor="@color/colorAccent"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
@@ -45,7 +45,7 @@
         android:layout_marginTop="350dp"
         android:background="@color/colorTextIcons"
         android:textColor="@color/colorPrimaryDark"
-        android:text="About us"
+        android:text="@string/about_us"
         />
 
 </RelativeLayout>

@@ -98,7 +98,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Save Github User"
+            android:text="@string/save_github_user"
             android:id="@+id/saveGithubButton"
             android:layout_alignParentBottom="true"
             android:background="@color/colorTextIcons"

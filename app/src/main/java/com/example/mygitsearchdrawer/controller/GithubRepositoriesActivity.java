@@ -82,8 +82,6 @@ public class GithubRepositoriesActivity extends AppCompatActivity {
                         Log.d("username-----------", watchman.getLogin());
                         Log.d("image--------------", watchman.getAvatarUrl());
                         Log.d("url----------------", watchman.getHtmlUrl());
-                        Integer fol = watchman.getFollowers();
-                        Log.e("Followers-------",fol.toString());
                     }
                 }
 

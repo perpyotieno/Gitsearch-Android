@@ -10,37 +10,24 @@ import org.parceler.Parcel;
 public class Item {
     @SerializedName("login")
     @Expose
-    private String login;
+    String login;
 
     @SerializedName("avatar_url")
     @Expose
-    private String avatarUrl;
+    String avatarUrl;
 
     @SerializedName("html_url")
     @Expose
-    private String htmlUrl;
+    String htmlUrl;
 
 
-
-    @SerializedName("followers")
-    @Expose
-    private int followers;
-    @SerializedName("following")
-    @Expose
-    private int following;
-    @SerializedName("public_repos")
-    @Expose
-    private int repositories;
 
 public Item(){}
 
-    public Item(String login, String avatarUrl, String htmlUrl, int followers, int following, int repositories){
+    public Item(String login, String avatarUrl, String htmlUrl){
         this.login = login;
-        this.avatarUrl= avatarUrl;
+        this.avatarUrl= getLargeImageUrl(avatarUrl);
         this.htmlUrl=htmlUrl;
-        this.repositories=repositories;
-        this.followers=followers;
-        this.following=following;
     }
 
     public String getLogin() {
@@ -68,27 +55,10 @@ public Item(){}
         this.htmlUrl = htmlUrl;
     }
 
-    public int getFollowers() {
-        return followers;
+    public String getLargeImageUrl(String avatarUrl) {
+        String largeImageUrl = avatarUrl.substring(0, avatarUrl.length() - 6).concat("o.jpg");
+        return largeImageUrl;
     }
 
-    public void setFollowers(int followers) {
-        this.followers = followers;
-    }
 
-    public int getFollowing() {
-        return following;
-    }
-
-    public void setFollowing(int following) {
-        this.following = following;
-    }
-
-    public int getRepositories() {
-        return repositories;
-    }
-
-    public void setRepositories(int repositories) {
-        this.repositories = repositories;
-    }
 }

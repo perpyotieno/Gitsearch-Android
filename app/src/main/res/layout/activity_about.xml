@@ -62,7 +62,7 @@
                 android:lineSpacingExtra="8sp"
                 android:padding="10dp"
                 android:singleLine="false"
-                android:text="Git searcher is an application that allows you to search through github repositories and view projects. You can view projects of your preferred users using their usernames. You can also view projects of a similar kind,for example pig dice projects. Additionally, we allow you to view projects of different languages. When you view projects we retain them for you, therefore you cn view them again the next time you visit the application without searching. You can write back to us at perpetuamary6630@gmail.com in case of any issues. Have fun!"
+                android:text="@string/git_searcher_is_an_application_that_allows_you_to_search_through_github_repositories_and_view_projects_you_can_view_projects_of_your_preferred_users_using_their_usernames_you_can_also_view_projects_of_a_similar_kind_for_example_pig_dice_projects_additionally_we_allow_you_to_view_projects_of_different_languages_when_you_view_projects_we_retain_them_for_you_therefore_you_cn_view_them_again_the_next_time_you_visit_the_application_without_searching_you_can_write_back_to_us_at_perpetuamary6630_gmail_com_in_case_of_any_issues_have_fun"
                 android:textColor="@color/colorPrimary"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -76,45 +76,15 @@
         </LinearLayout>
     </ScrollView>
 
-    <EditText
-        android:id="@+id/edit_username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:hint="@string/enter_username_to_search_repos"
-        android:textAlignment="center"
-        app:layout_constraintStart_toEndOf="@+id/search_repos"
-        app:layout_constraintTop_toBottomOf="@+id/scroll_view" />
-
-
-    <Button
-        android:id="@+id/search_repos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:layout_below="@+id/edit_username"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@color/colorTextIcons"
-        android:text="@string/search"
-        android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/frequently_searched"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_username"
-        app:layout_constraintVertical_bias="0.0" />
-
     <Button
         android:id="@+id/frequently_searched"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="71dp"
         android:layout_below="@+id/scroll_view"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="25dp"
         android:background="@color/colorTextIcons"
 
@@ -122,8 +92,27 @@
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/scroll_view"
-        app:layout_constraintHorizontal_bias="0.969"
+        app:layout_constraintHorizontal_bias="0.891"
         app:layout_constraintStart_toEndOf="@+id/search_repos"
         app:layout_constraintTop_toBottomOf="@+id/scroll_view"
-        app:layout_constraintVertical_bias="0.594" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/savedUsersButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorAccent"
+        android:text="My Saved Github Users"
+        android:textColor="@color/colorTextIcons"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frequently_searched"
+        app:layout_constraintVertical_bias="0.218" />
 </androidx.constraintlayout.widget.ConstraintLayout>
