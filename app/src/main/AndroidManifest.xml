@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".controller.LoginActivity"></activity>
+
         <activity android:name=".controller.CreateAccountActivity" />
         <activity android:name=".SavedUserListActivity" />
 
@@ -31,10 +31,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.mygitsearchdrawer.controller.MainActivity" />
         </activity>
+
         <activity
             android:name=".controller.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name=".controller.LoginActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
