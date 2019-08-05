@@ -18,6 +18,8 @@ import android.widget.Toast;
 import com.example.mygitsearchdrawer.Constants;
 import com.example.mygitsearchdrawer.R;
 import com.example.mygitsearchdrawer.model.Item;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
@@ -75,12 +77,25 @@ public class UserDetailsFragment extends Fragment implements View.OnClickListene
     @Override
     public void onClick(View view) {
         if (view == mSaveGithubButton) {
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String uid = user.getUid();
             DatabaseReference githubRef = FirebaseDatabase
                     .getInstance()
-                    .getReference(Constants.FIREBASE_CHILD_GITHUB_USER);
+                    .getReference(Constants.FIREBASE_CHILD_GITHUB_USER)
+            .child(uid);
+            DatabaseReference pushRef = githubRef.push();
+
+            String pushId = pushRef.getKey();
+            items.setPushId(pushId);
+            pushRef.setValue(items);
+
+
+
             githubRef.push().setValue(items);
             Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
 
         }
+
+
     }
 }

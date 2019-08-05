@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import com.example.mygitsearchdrawer.model.Item;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -31,8 +33,18 @@ public class SavedUserListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_github_repositories);
         ButterKnife.bind(this);
 
-        mGithubReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_GITHUB_USER);
+
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+
+        mGithubReference = FirebaseDatabase
+                .getInstance()
+                .getReference(Constants.FIREBASE_CHILD_GITHUB_USER)
+                .child(uid);
+
         setUpFirebaseAdapter();
+
     }
     private void setUpFirebaseAdapter(){
         FirebaseRecyclerOptions<Item> options =

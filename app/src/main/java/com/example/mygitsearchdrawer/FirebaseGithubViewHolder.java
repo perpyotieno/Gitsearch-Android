@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mygitsearchdrawer.controller.RepositoriesDetailActivity;
 import com.example.mygitsearchdrawer.model.Item;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -48,7 +50,11 @@ public class FirebaseGithubViewHolder extends RecyclerView.ViewHolder implements
     @Override
     public void onClick(View view) {
         final ArrayList<Item> items = new ArrayList<>();
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_GITHUB_USER);
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_GITHUB_USER). child(uid);
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
 
             @Override

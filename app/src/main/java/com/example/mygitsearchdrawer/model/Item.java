@@ -20,9 +20,12 @@ public class Item {
     @Expose
     String htmlUrl;
 
+    private String pushId;
 
 
-public Item(){}
+
+
+    public Item(){}
 
     public Item(String login, String avatarUrl, String htmlUrl){
         this.login = login;
@@ -58,6 +61,13 @@ public Item(){}
     public String getLargeImageUrl(String avatarUrl) {
         String largeImageUrl = avatarUrl.substring(0, avatarUrl.length() - 6).concat("o.jpg");
         return largeImageUrl;
+    }
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 
 
