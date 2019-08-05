@@ -40,4 +40,7 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="logout">Logout</string>
+    <string name="my_saved_github_users">My Saved Github Users</string>
+    <string name="don_t_have_an_account_sign_up_here">Don\'t have an account? Sign up here!</string>
+    <string name="log_in">Log in</string>
 </resources>
