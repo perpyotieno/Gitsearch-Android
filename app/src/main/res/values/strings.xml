@@ -32,4 +32,11 @@
     <string name="github_searcher">Github Searcher</string>
     <string name="search_through_github">Search through github</string>
     <string name="about_us">About us</string>
+    <string name="already_have_an_account_log_in_here">Already have an account? Log in here!</string>
+    <string name="create_account">Create Account</string>
+    <string name="sign_up">Sign up</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
 </resources>
