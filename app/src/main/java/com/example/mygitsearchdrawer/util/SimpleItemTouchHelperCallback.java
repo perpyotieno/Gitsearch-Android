@@ -11,14 +11,13 @@ public class SimpleItemTouchHelperCallback extends ItemTouchHelper.Callback{
     public SimpleItemTouchHelperCallback(ItemTouchHelperAdapter adapter){
         mAdapter = adapter;
     }
-    //  The method below informs the ItemTouchHelperAdapter that drag gestures are enabled.
-    //  We could also disable drag gestures by returning 'false'.
-
     @Override
     public boolean isLongPressDragEnabled(){
         return true;
     }
 
-
-
+    @Override
+    public boolean isItemViewSwipeEnabled() {
+        return true;
+    }
 }
