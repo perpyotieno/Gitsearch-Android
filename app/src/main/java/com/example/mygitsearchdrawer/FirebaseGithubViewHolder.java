@@ -102,6 +102,4 @@ public class FirebaseGithubViewHolder extends RecyclerView.ViewHolder implements
                 .scaleY(1f);
     }
 
-
-
 }
