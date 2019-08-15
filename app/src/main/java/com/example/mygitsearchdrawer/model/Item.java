@@ -21,6 +21,7 @@ public class Item {
     String htmlUrl;
 
     private String pushId;
+    String index;
 
 
 
@@ -31,7 +32,16 @@ public class Item {
         this.login = login;
         this.avatarUrl= getLargeImageUrl(avatarUrl);
         this.htmlUrl=htmlUrl;
+        this.index = "not_specified";
     }
+    public String getIndex() {
+        return index;
+    }
+
+    public void setIndex(String index) {
+        this.index = index;
+    }
+
 
     public String getLogin() {
         return login;
