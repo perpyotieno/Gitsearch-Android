@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:elevation="60dp"
+    android:foreground="?android:attr/selectableItemBackground">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/cover"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"/>
+
+        <ImageView
+            android:id="@+id/dragIcon"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignLeft="@id/cover"
+            android:layout_alignBottom="@+id/cover"
+            android:gravity="bottom|left"
+            android:src="@drawable/baseline_reorder_black_18dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/titleTxtView"
+            android:text="Username"
+            android:layout_toRightOf="@+id/cover"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/githublink1"
+            android:text="GithubLink"
+            android:layout_toRightOf="@+id/cover"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/titleTxtView"
+            android:visibility="invisible"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textStyle="bold"/>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

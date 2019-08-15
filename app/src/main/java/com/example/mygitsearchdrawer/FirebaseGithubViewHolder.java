@@ -25,6 +25,8 @@ import org.parceler.Parcels;
 import java.util.ArrayList;
 
 public class FirebaseGithubViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public ImageView mGithubImageView;
+
     View mView;
     Context mContext;
     public FirebaseGithubViewHolder(View itemView) {
@@ -35,12 +37,13 @@ public class FirebaseGithubViewHolder extends RecyclerView.ViewHolder implements
     }
 
     public void bindGithub(Item item) {
-        ImageView userImageView = (ImageView) mView.findViewById(R.id.cover);
+       //mageView userImageView = (ImageView) mView.findViewById(R.id.cover);
+        mGithubImageView = (ImageView) mView.findViewById(R.id.cover);
         TextView nameTextView = (TextView) mView.findViewById(R.id.titleTxtView);
         TextView linkTextView = (TextView) mView.findViewById(R.id.githublink1);
 
 
-        Picasso.get().load(item.getAvatarUrl()).into(userImageView);
+        Picasso.get().load(item.getAvatarUrl()).into(mGithubImageView);
 
         nameTextView.setText(item.getLogin());
         linkTextView.setText(item.getHtmlUrl());

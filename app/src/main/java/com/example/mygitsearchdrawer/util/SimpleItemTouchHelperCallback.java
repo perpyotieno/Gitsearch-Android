@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class SimpleItemTouchHelperCallback extends ItemTouchHelper.Callback{
     private final ItemTouchHelperAdapter mAdapter;
     //  This constructor takes an ItemTouchHelperAdapter parameter. When implemented in
-    //  FirebaseRestaurantListAdapter, the ItemTouchHelperAdapter instance will pass the gesture event back to the
+    //  FirebaseGithubListAdapter, the ItemTouchHelperAdapter instance will pass the gesture event back to the
     //  Firebase adapter where we will define what occurs when an item is moved or dismissed.
 
     public SimpleItemTouchHelperCallback(ItemTouchHelperAdapter adapter){
@@ -31,7 +31,7 @@ public class SimpleItemTouchHelperCallback extends ItemTouchHelper.Callback{
     }
 
     @Override
-    public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+    public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder source, @NonNull RecyclerView.ViewHolder target) {
         if(source.getItemViewType() != target.getItemViewType()) {
             return false;
         }
