@@ -2,6 +2,7 @@ package com.example.mygitsearchdrawer;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mygitsearchdrawer.controller.RepositoriesDetailActivity;
 import com.example.mygitsearchdrawer.model.Item;
+import com.example.mygitsearchdrawer.util.ItemTouchHelperViewHolder;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -24,8 +26,10 @@ import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
-public class FirebaseGithubViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+public class FirebaseGithubViewHolder extends RecyclerView.ViewHolder implements ItemTouchHelperViewHolder {
     public ImageView mGithubImageView;
+    private static final int MAX_WIDTH = 200;
+    private static final int MAX_HEIGHT = 200;
 
     View mView;
     Context mContext;
@@ -33,7 +37,7 @@ public class FirebaseGithubViewHolder extends RecyclerView.ViewHolder implements
         super(itemView);
         mView = itemView;
         mContext = itemView.getContext();
-        itemView.setOnClickListener(this);
+//        itemView.setOnClickListener(this);
     }
 
     public void bindGithub(Item item) {
@@ -50,34 +54,47 @@ public class FirebaseGithubViewHolder extends RecyclerView.ViewHolder implements
 
     }
 
+//    @Override
+//    public void onClick(View view) {
+//        final ArrayList<Item> items = new ArrayList<>();
+//
+//        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//        String uid = user.getUid();
+//
+//        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_GITHUB_USER). child(uid);
+//        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+//
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+//                    items.add(snapshot.getValue(Item.class));
+//                }
+//
+//                int itemPosition = getLayoutPosition();
+//
+//                Intent intent = new Intent(mContext, RepositoriesDetailActivity.class);
+//                intent.putExtra("position", itemPosition + "");
+//                intent.putExtra("restaurants", Parcels.wrap(items));
+//
+//                mContext.startActivity(intent);
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//            }
+//        });
+//    }
+
     @Override
-    public void onClick(View view) {
-        final ArrayList<Item> items = new ArrayList<>();
-
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        String uid = user.getUid();
-
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_GITHUB_USER). child(uid);
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
-
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    items.add(snapshot.getValue(Item.class));
-                }
-
-                int itemPosition = getLayoutPosition();
-
-                Intent intent = new Intent(mContext, RepositoriesDetailActivity.class);
-                intent.putExtra("position", itemPosition + "");
-                intent.putExtra("restaurants", Parcels.wrap(items));
-
-                mContext.startActivity(intent);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-        });
+    public void onItemSelected() {
+        Log.d("Animation", "onItemSelected");
+        // we will add animations here
     }
+
+    @Override
+    public void onItemClear() {
+        Log.d("Animation", "onItemClear");
+        // we will add animations here
+    }
+
 }

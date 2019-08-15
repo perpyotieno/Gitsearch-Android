@@ -31,8 +31,9 @@ public class RepositoriesDetailActivity extends AppCompatActivity{
         setContentView(R.layout.activity_repositories_detail);
         ButterKnife.bind(this);
 
+
         items = Parcels.unwrap(getIntent().getParcelableExtra("mItems"));
-        int startingPosition = getIntent().getIntExtra("i", 0);
+        int startingPosition = getIntent().getIntExtra("position", 0);
         adapterViewPager = new GithubPagerAdapter(getSupportFragmentManager(), items);
         mViewPager.setAdapter(adapterViewPager);
         mViewPager.setCurrentItem(startingPosition);

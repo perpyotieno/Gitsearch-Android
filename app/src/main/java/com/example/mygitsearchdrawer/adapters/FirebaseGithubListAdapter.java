@@ -1,6 +1,7 @@
 package com.example.mygitsearchdrawer.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -11,6 +12,7 @@ import androidx.core.view.DragStartHelper;
 
 import com.example.mygitsearchdrawer.FirebaseGithubViewHolder;
 import com.example.mygitsearchdrawer.R;
+import com.example.mygitsearchdrawer.controller.RepositoriesDetailActivity;
 import com.example.mygitsearchdrawer.model.Item;
 import com.example.mygitsearchdrawer.util.ItemTouchHelperAdapter;
 import com.example.mygitsearchdrawer.util.OnStartDragListener;
@@ -21,6 +23,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Query;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -88,7 +92,21 @@ public class FirebaseGithubListAdapter extends FirebaseRecyclerAdapter<Item, Fir
                 return false;
             }
         });
+
+
+        firebaseGithubViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, RepositoriesDetailActivity.class);
+                intent.putExtra("position", firebaseGithubViewHolder.getAdapterPosition());
+                intent.putExtra("items", Parcels.wrap(mItems));
+                mContext.startActivity(intent);
+            }
+        });
+
     }
+
 
     @NonNull
     @Override
