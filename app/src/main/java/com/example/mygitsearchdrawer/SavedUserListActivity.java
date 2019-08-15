@@ -22,15 +22,18 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SavedUserListActivity extends AppCompatActivity implements OnStartDragListener {
     private DatabaseReference mGithubReference;
-  //  private FirebaseRecyclerAdapter<Item, FirebaseGithubViewHolder> mFirebaseAdapter;
     private FirebaseGithubListAdapter mFirebaseAdapter;
     private ItemTouchHelper mItemTouchHelper;
+  //  private FirebaseRecyclerAdapter<Item, FirebaseGithubViewHolder> mFirebaseAdapter;
+
+
    // private DragStartHelper.OnDragStartListener mOnStartDragListener;
 
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
@@ -41,9 +44,6 @@ public class SavedUserListActivity extends AppCompatActivity implements OnStartD
         setContentView(R.layout.activity_github_repositories);
         ButterKnife.bind(this);
 
-
-
-
         setUpFirebaseAdapter();
 
     }
@@ -52,17 +52,24 @@ public class SavedUserListActivity extends AppCompatActivity implements OnStartD
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = user.getUid();
 
-        mGithubReference = FirebaseDatabase
-                .getInstance()
+        Query query = FirebaseDatabase.getInstance()
                 .getReference(Constants.FIREBASE_CHILD_GITHUB_USER)
-                .child(uid);
+                .child(uid)
+                .orderByChild(Constants.FIREBASE_QUERY_INDEX);
+
+
+//        mGithubReference = FirebaseDatabase
+//                .getInstance()
+//                .getReference(Constants.FIREBASE_CHILD_GITHUB_USER)
+//                .child(uid);
 
         FirebaseRecyclerOptions<Item> options =
                 new FirebaseRecyclerOptions.Builder<Item>()
-                        .setQuery(mGithubReference, Item.class)
+                        .setQuery(query, Item.class)
                         .build();
 
-        mFirebaseAdapter = new FirebaseGithubListAdapter(options, mGithubReference, this, this);
+        mFirebaseAdapter = new FirebaseGithubListAdapter(options,
+                query, this, this);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mFirebaseAdapter);
         mRecyclerView.setHasFixedSize(true);
@@ -103,6 +110,11 @@ public class SavedUserListActivity extends AppCompatActivity implements OnStartD
     }
     public void onStartDrag(RecyclerView.ViewHolder viewHolder){
         mItemTouchHelper.startDrag(viewHolder);
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mFirebaseAdapter.stopListening();
     }
 
 
