@@ -37,11 +37,11 @@ public class FirebaseGithubViewHolder extends RecyclerView.ViewHolder implements
         super(itemView);
         mView = itemView;
         mContext = itemView.getContext();
-//        itemView.setOnClickListener(this);
+
     }
 
     public void bindGithub(Item item) {
-       //mageView userImageView = (ImageView) mView.findViewById(R.id.cover);
+
         mGithubImageView = (ImageView) mView.findViewById(R.id.cover);
         TextView nameTextView = (TextView) mView.findViewById(R.id.titleTxtView);
         TextView linkTextView = (TextView) mView.findViewById(R.id.githublink1);
@@ -53,37 +53,6 @@ public class FirebaseGithubViewHolder extends RecyclerView.ViewHolder implements
         linkTextView.setText(item.getHtmlUrl());
 
     }
-
-//    @Override
-//    public void onClick(View view) {
-//        final ArrayList<Item> items = new ArrayList<>();
-//
-//        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//        String uid = user.getUid();
-//
-//        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_GITHUB_USER). child(uid);
-//        ref.addListenerForSingleValueEvent(new ValueEventListener() {
-//
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-//                    items.add(snapshot.getValue(Item.class));
-//                }
-//
-//                int itemPosition = getLayoutPosition();
-//
-//                Intent intent = new Intent(mContext, RepositoriesDetailActivity.class);
-//                intent.putExtra("position", itemPosition + "");
-//                intent.putExtra("restaurants", Parcels.wrap(items));
-//
-//                mContext.startActivity(intent);
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//            }
-//        });
-//    }
 
     @Override
     public void onItemSelected() {
